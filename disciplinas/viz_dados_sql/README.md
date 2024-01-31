@@ -44,7 +44,9 @@ O "lance" desta disciplina de Visualização de Dados e Introdução a SQL é qu
 
 ## Google Loocker Studio. 
 
-O Google Looker Studio é uma ferramenta de automação de Business Intelligence dentro da infraestrutura do Google Cloud. Daria até para dizer que é uma ferramenta de transformação de dados em relatórios e dashboards.  A própria empresa a define como “uma busca Google exclusiva para o seu negócio”. Em outras palavras, "é o PowerBI do Google". 
+O Google Looker Studio é uma ferramenta de automação de Business Intelligence dentro da infraestrutura do Google Cloud. Daria até para dizer que é uma ferramenta de transformação de dados em relatórios e dashboards.  A própria empresa a define-o como “uma busca Google exclusiva para o seu negócio”. 
+
+Na bibliografia recomandada, ele é apresentado como uma ferramenta de visualização de dados do Google que permite criar histórias de dados por meio de painéis interativos [...] que facilita a colaboração contínua [com] uma interface simples de arrastar e soltar que permite que usuários não técnicos e técnicos criem facilmente visuais e relatórios. Em outras palavras, "é o PowerBI do Google". 
 
 Para usar o Google Looker Studio, você precisa primeiro se conectar a uma fonte de dados. O Looker Studio suporta uma ampla variedade de fontes de dados, incluindo bancos de dados, planilhas, arquivos e APIs.
 
@@ -81,6 +83,84 @@ De modo geral, dashboards são ferramentas poderosas para monitoramento, anális
 * Interatividade: Possibilidade de interação com os elementos do dashboard, como filtragem, zoom, detalhamento, etc., para explorar os dados em maior profundidade.
 
 * Atualização em Tempo Real: Capacidade de atualizar automaticamente os dados exibidos no dashboard em tempo real ou em intervalos definidos.
+
+## De cara com o Looker! E agora?
+
+Ao iniciar a ferramenta você see depra com três opções: Relatórios, Fontes de dados e Exploradores. Eles são organizados nas guias correspondentes sob a barra de pesquisa. Você pode alternar entre esses modos de exibição facilmente. 
+
+Por padrão, a home page exibe a guia Relatórios, que mostra a lista de relatórios que você acessou recentemente. A guia Relatórios também exibe um widget de galeria de modelos na parte superior para que você possa começar a criar um relatório facilmente usando um modelo ou começando a partir de um relatório em branco. 
+
+O botão Criar no canto superior esquerdo permite criar um relatório, uma fonte de dados ou um explorador.
+
+As quatro entidades principais no Looker Studio incluem um [conjunto de dados], um [conector], uma [fonte de dados] e um [relatório]. Eles estão ligados entre si, conforme mostrado, no diagrama a seguir:
+
+    [Dataset] -> [Conector] -> [Data Source] -> [Report | Dashboard]
+
+### Para gravar
+
+- Conjunto de dados é a fonte de dados física na forma de arquivos, tabelas de banco de dados, visualizações do Google Analytics e muito mais que existe fora do Looker Studio. 
+
+- Conector é a entidade que torna possível a conexão entre os dois. O conector funciona como o pipeline entre o conjunto de dados físico e a fonte de dados lógica. O Looker Studio oferece mais de 500 conectores para uma ampla variedade de armazenamentos de dados. 
+
+- Fonte de dados é a construção lógica que se manifesta no Looker Studio com base no conjunto de dados subjacente. 
+
+- Relatório é um recurso utilizado para criar um painel de tela única ou um relatório de várias páginas. Seus campos e métricas são usados para exibir informações. 
+
+
+### Atenção
+    Um único relatório pode usar várias fontes de dados. Da mesma forma, uma única fonte de dados pode ser usada para criar vários relatórios.
+
+
+O recurso "Explorar" nos permite 'explorar' dados 'ad hoc'. WTF? Isso quer dizer que a partir dela [ferramenta] temos a capacidade de investigar, analisar e extrair insights de dados de forma flexível e improvisada, conforme necessário ou de acordo com os requisitos específicos de uma determinada situação ou problema.
+
+"Ad hoc" [lê-se adoc e não ad roc] é uma expressão latina que significa "para isso" ou "para este fim". Quando aplicado à exploração de dados, "ad hoc" implica que a análise é realizada de maneira oportunista e não planejada, muitas vezes em resposta a uma necessidade imediata ou a uma pergunta específica que surge durante o processo de análise de dados.
+
+## Criando uma fonte de dados
+Uma fonte de dados no Looker Studio pode ser criada de duas maneiras: de dentro de um relatório ou diretamente da home page. Quando a fonte de dados é criada a partir da home page ele pode ser usado por vários relatórios e é denominado uma fonte de dados reutilizável e isso permite sua reutilização em outros relatórios.
+
+
+
+## Gerenciando a atualização de dados
+Quase sempre, as fontes de dados [...] mantêm uma conexão em tempo real com o conjunto de dados subjacente. Isso é muito benéfico nos casos em que o conjunto de dados é enorme ou está sendo atualizado com frequência. Ter uma conexão em tempo real garante que as atualizações de dados mais recentes sejam exibidas e relatórios sejam atualizados automaticamente. A única exceção em que os dados são importados para o Looker Studio é ao se conectar a arquivos CSV, cujo intervalo de atualização 'automática' é de 12h.
+
+### Atenção
+Parece haver um limite de tamanho de arquivo para upload: 100 MB por conjunto de dados. Além disso, um usuário individual só pode usar 2 GB de armazenamento no total em todas essas fontes de dados. [...] e se o seu conjunto de dados estiver dividido em vários arquivos CSV com a mesma estrutura – ou seja, os mesmos campos estão na mesma ordem – é possível importá-los juntos para formar uma única fonte de dados.
+
+
+
+
+
+
+
+
+## Leituras recomandadas
+
+* Leia o capítulo “Google Looker Studio Overview” do livro “Data Storytelling with Google Looker Studio”, de Nicholas Kelly, para iniciar sua jornada com uma visão geral do Google Looker.
+Clique aqui para acessar o recurso
+
+
+
+### Dicas
+- Cada coluna do arquivo csv é uma dimensão
+
+- Métricas são cálculos (agregações)
+
+
+## Fontes de dados
+
+### Arquivo CSV
+
+Arquivos CSV, ou Comma-separated values, são arquivos de texto que armazenam dados em formato de tabela. Cada linha do arquivo representa uma linha da tabela, e cada coluna é separada por uma vírgula. CSV é um formato de arquivo de texto simples e fácil de entender, o que o torna uma opção popular para o armazenamento e o intercâmbio de dados. Eles são frequentemente usados para importar e exportar dados de aplicativos de planilhas, bancos de dados e outras ferramentas.
+
+Aqui estão algumas vantagens de usar arquivos CSV:
+
+- Simples de entender: Arquivos CSV são um formato de texto simples, o que os torna fáceis de entender e trabalhar.
+- Versátil: Arquivos CSV podem ser usados para armazenar uma ampla variedade de dados, incluindo números, texto e datas.
+- Compatível com vários aplicativos: Arquivos CSV são compatíveis com uma ampla variedade de aplicativos, incluindo planilhas, bancos de dados e ferramentas de análise de dados.
+
+Se você precisar armazenar ou trocar dados em um formato de texto simples, arquivos CSV são uma ótima opção. Eles são fáceis de entender, versáteis e compatíveis com uma ampla variedade de aplicativos.
+
+
 
 ## Introdução a SQL
 
